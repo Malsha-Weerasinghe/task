@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Task One</title>
+    <title>Task</title>
     <link rel="stylesheet" href="assts/css/bootstrap.css">
+
 </head>
 <body>
 <section class="container mt-3">
     <section class="row">
         <!--Case One-->
         <div class="col">
-            <h1 class="h1">Hello There How are you.?</h1>
+            <h1>Hello There How are you.?</h1>
             <input id="txt" class="form-control" type="text" placeholder="Input Something">
             <button id="btn1" class="mt-2 btn btn-danger">Change Text</button>
         </div>
@@ -24,26 +25,27 @@
         </div>
     </section>
 </section>
-
 <script>
-    //Case One
-    //Bind an event for Change Text Btn
-    //Get Input Text Value
-    //Assign it to H1 text
-    //Change the color of h1 to red
-    //Change font size t0 4em
-    document.querySelector('#txt').addEventListener("keyup",function(){
-        document.querySelector("h1").innerText=document.querySelector("input").value
+
+    document.getElementById("txt").addEventListener("keyup", function (){
+        document.querySelector("h1").innerText=document.getElementById("txt").value
     });
-    document.querySelector('#btn1').addEventListener("click",function(){
+
+    document.getElementById("btn1").addEventListener("click",function (){
         document.querySelector("h1").style.color='red'
     });
 
-    //Case Two
-    //Bind an event for Change Image Btn
-    //Get Input URL Value
-    //Assign it to the Image src
 
+    document.getElementById("btn2").addEventListener("click",function (){
+
+        const url = document.getElementById("url").value;
+
+        document.getElementById("img").style.backgroundSize='cover'
+
+        // "url('assets/image/cart-1.jpg')";
+
+        document.getElementById("img").style.backgroundImage = "url("+ url + ")";
+    });
 
 </script>
 </body>
