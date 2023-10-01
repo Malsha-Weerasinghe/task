@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task6</title>
+  <link rel="stylesheet" href="../assts/css/bootstrap.css">
+
+</head>
+<body>
+
+<section class="container">
+  <h1>Task Generator.!</h1>
+  <div class="row">
+    <div class="col-4">
+      <input id="txt" class="form-control" type="text" placeholder="Input a Task">
+      <button id="btn" class="btn btn-danger mt-2">Add Task</button>
+    </div>
+    <div class="offset-1 col-3 shadow overflow-x-hidden" style="height: 70vh">
+      <ol id="list" class="list-group p-2">
+        <li class="list-group-item">Task One</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  //Bind an event for Change Text Btn
+  //Get Input Text Value
+  //Create a list element
+  //Add it to the Ordered List
+
+  let btn = document.querySelector("#btn");
+  let ol = document.querySelector("#list");
+
+  btn.addEventListener("click",function(){
+    let type = document.querySelector("#txt").value;
+    console.log(type);
+
+    let li = document.createElement("li");
+    li.setAttribute("class","list-group-item")
+
+    li.textContent=type;
+
+    ol.append(li);
+  });
+
+</script>
+</body>
+</html>
