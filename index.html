@@ -444,15 +444,22 @@
             salary: cus_Salary
         }
 
-        //add customer to object to the array
         customers.push(customer);
+        getAllCustomers();
         console.log(customers);
     });
 
 
     //refactor get_all with jQuery
     $("#btnViewCus").click(function () {
+        getAllCustomers();
+    });
+
+
+    function getAllCustomers(){
+        //remove all the child elements of tbody before adding the table rows
         $("#tblCustomer").empty();
+
         for (let i = 0; i < customers.length; i++) {
             let row = `<tr>
                             <td>${customers[i].id}</td>
@@ -462,9 +469,8 @@
                         </tr>`;
             $("#tblCustomer").append(row);
         }
+    }
 
-
-    });
 </script>
 
 </body>
