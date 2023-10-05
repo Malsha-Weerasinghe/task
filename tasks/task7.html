@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Task</title>
-    <link rel="stylesheet" href="assts/css/bootstrap.css">
+    <title>Task Two</title>
+    <link rel="stylesheet" href="../assts/css/bootstrap.css">
 
 </head>
 <body>
@@ -28,13 +28,46 @@
 
 <script>
 
-    let startBtn = document.querySelector("#btnStart");
-    let display = document.querySelector("#display");
+    let startBtn=document.querySelector("#btnStart");
+    let display=document.querySelector("#display");
+    let btnStop=document.querySelector("#btnStop");
+    let btnPlus=document.querySelector("#btnIncrement");
+    let btnMinus=document.querySelector("#btnMinus");
+    let txt=document.querySelector("#txt");
+    let timerID=0;
+
+
 
     startBtn.addEventListener("click",function (){
+        let number= txt.value;//type value in the input field
+        display.innerText=number;
+
+        //clear the previous timer before creating a new one
+        clearInterval(timerID);
+        //let's set a timer
+        timerID=  setInterval(function(){
+            //should start increment
+            display.innerText=parseInt(display.innerText)+1;
+        },100);
+    });
+
+
+    btnStop.addEventListener("click",function (){
+        clearInterval(timerID);
+    });
+
+
+    btnPlus.addEventListener("click",function (){
         display.innerText=parseInt(display.innerText)+1;
     });
 
+    btnMinus.addEventListener("click",function (){
+        display.innerText=parseInt(display.innerText)-1;
+    });
+
+
+
 </script>
+
 </body>
 </html>
